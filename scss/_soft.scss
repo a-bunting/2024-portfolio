@@ -1,0 +1,133 @@
+.soft {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__blurb {
+        font-size: 2rem;
+        text-align: center;
+        margin: 4rem;
+
+        @media screen and (max-width: $triggerOne) {
+            margin: 2rem;
+        }
+    }
+
+    &__title {
+        display: none;
+        font-size: 5rem;
+        margin-top: 1rem;
+        -webkit-text-stroke: 3px;
+        -webkit-text-stroke-color: var(--colorTwo);
+
+        @media screen and (max-width: $mobile) {
+            display: block;
+        }
+    }
+
+    &__deck {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        row-gap: 2rem;
+        column-gap: 2rem;
+        
+        @media screen and (max-width: $mobile) {
+            grid-template: repeat(4, max-content) / 1fr;
+        }
+        
+        margin-top: 3rem;
+        margin-left: 10%;
+        margin-right: 10%;
+        
+        transition: all .2s;
+        
+        max-width: 80%;
+        
+        @media screen and (max-width: $triggerOne) {
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            max-width: 95%;
+        }
+    }
+
+    &__card {
+        height: 30rem;
+        border-radius: 2rem;
+        border: .3rem solid var(--colorOne);
+        box-shadow: .3rem .3rem 0 var(--colorFour);
+        overflow: scroll;
+        background-color: var(--colorOne);
+        
+        transition: all .2s;
+
+        @media screen and (max-width: $mobile) {
+            height: auto;
+
+            &:last-of-type {
+                margin-bottom: 2rem;
+            }
+        }
+        
+        &:hover {
+            transform: scale(1.05);
+        }
+        
+        &--title {
+            position: sticky;
+            top: 0;
+            font-size: 2vw;
+            background-color: var(--colorOne);
+            text-align: right;
+            padding: 2rem;
+            font-weight: bold;
+            color: var(--colorThree);
+            text-shadow: .2rem .2rem 0 black;
+            letter-spacing: .15rem;
+            white-space: nowrap;
+            border-bottom: .2rem solid var(--colorOne);
+
+            &--long {
+                font-size: 1.6vw;
+            }
+
+            @media screen and (max-width: $mobile) {
+                font-size: 2rem;
+            }
+        }
+        
+        &--spiel {
+            
+            padding: 2rem;
+
+            p {
+                font-size: 1.2rem;
+                letter-spacing: .15rem;
+                line-height: 2rem;                
+
+                &:not(:last-of-type) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    &__communication, &__leader, &__time, &__adaptability {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: 50%;
+    }
+
+    &__communication {
+        background-image: url(./../images/soft/communication.jpeg);
+    }
+    &__leader {
+        background-image: url(./../images/soft/teamwork.jpeg);
+    }
+    &__time {
+        background-image: url(./../images/soft/time.jpeg);
+    }
+    &__adaptability {
+        background-image: url(./../images/soft/adaptability.jpeg);
+    }
+}

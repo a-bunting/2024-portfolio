@@ -1,0 +1,100 @@
+.coding {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50rem;
+    min-width: 50rem;
+
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: $triggerOne) {
+        position: relative;
+        top: initial;
+        left: initial;
+        min-width: 80%;
+        transform: none;
+        margin-top: 5rem;
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 95%;
+    }
+
+    &__title {
+        display: none;
+        font-size: 5rem;
+        margin-top: 1rem;
+        -webkit-text-stroke: 3px;
+        -webkit-text-stroke-color: var(--colorTwo);
+
+        @media screen and (max-width: $mobile) {
+            display: block;
+        }
+    }
+
+    &__section {
+        display: flex;
+
+        background-color: rgba(lightgray, .5);
+        border-radius: 1rem;
+        padding: 1rem;
+
+        margin-bottom: 2rem;
+
+        &--text {
+            flex: 0 0 15rem;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        &--icons {
+
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            row-gap: 2rem;
+            column-gap: 4rem;
+
+            &--long {
+                height: 3rem;
+            }
+            
+            &--short {
+                height: 5rem;
+            }
+        }
+    }
+
+    &__skill {
+        position: relative;
+
+        &--time {
+            position: absolute;
+            bottom: -.5rem;
+            right: -1rem;
+
+            border-radius: .5rem;
+            background-color: var(--colorOne);
+
+            font-size: .8rem;
+            text-align: center;
+            padding: .1rem .3rem;
+
+            white-space: nowrap;
+
+            border: .1rem solid black;
+        }
+    }
+}
+
+.glow {
+    animation: glow 1s ease-in-out 0s infinite alternate;
+}
+
+@keyframes glow {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.4); }
+}

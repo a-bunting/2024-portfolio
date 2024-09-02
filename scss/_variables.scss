@@ -1,0 +1,56 @@
+// sizes
+$triggerOne: 70rem;
+$mobile: 45rem;
+
+@mixin bg-gradient($colorVariable){
+    background: linear-gradient(to right, transparent 0%, $colorVariable 60%, $colorVariable 100%);
+}
+
+body.retro-theme {
+    --colorOne: #B4D6CD;
+    --colorTwo: #FFDA76;
+    --colorThree: #FF8C9E;
+    --colorFour: #FF4E88;
+    
+    .intro__project--back {
+        background-color: var(--colorOne);
+    }
+
+    .retro-theme { display: block; }
+    .goth-mode { display: none; }
+}
+
+body.goth-mode {
+    --colorFour: #E2E2B6;
+    --colorTwo: #6EACDA;
+    --colorThree: #03346E;
+    --colorOne: #021526;
+    color: white;
+    
+    .intro__project--back {
+        border: 1px solid black;
+        background-color: var(--colorFour);
+    } 
+    
+    .soft__card--title {
+        color: var(--colorTwo) !important;
+    }
+
+    .retro-theme { display: none; }
+    .goth-mode { display: block; }
+}
+
+.jazzyText {
+    font-family: "Jaro", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+    letter-spacing: .4rem;
+
+    color: var(--colorFour);
+    text-shadow: .3rem .3rem 0 var(--colorThree);
+
+    -webkit-text-stroke: 3px;
+    -webkit-text-stroke-color: var(--colorTwo);
+}

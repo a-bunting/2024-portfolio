@@ -1,0 +1,149 @@
+@use 'sass:math';
+
+.pageLoadSfx {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100001;
+
+    pointer-events: none;
+
+    transform-origin: center;
+    transform: rotate(-45deg);
+
+    @media all and (orientation: portrait) {
+        // transform-origin: initial;
+        // transform: none;
+    }
+
+    &__name {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        font-size: 10vw;
+        
+        transform: translate(-50%, -50%);
+        z-index: 100002;
+        
+        display: flex;
+        justify-content: center;
+        column-gap: 1rem;
+        text-align: center;
+        animation: fadeOut 0.4s ease-in-out 1s 1 forwards;
+        
+        text-shadow: .4rem .4rem 0 black;
+
+        pointer-events: none;
+        
+        @media screen and (max-width: $mobile) {
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+        }
+    }
+}
+
+.colorSwipe {
+
+    &__bar { 
+
+        $barHeight: 4;
+        $divFactor: 2.05;
+
+        position: absolute;
+
+        @media screen and (orientation: landscape) {
+            width: 100vw;
+        }
+
+        @media screen and (orientation: portrait) {
+            width: 100vh;
+        }
+        
+        height: #{$barHeight}vh; 
+        // width: 100vh;
+        // min-width: 100vh;
+        // height: #{$barHeight}vh;
+        // min-height: #{$barHeight}vw;
+
+        @for $i from 0 through 65 {
+
+            $delay2: 1 + (0.06 * ($i * 0.5));  // Second delay
+            
+            &:nth-of-type(#{$i * 2}) {
+                
+                $top: 0;
+                
+                @if ($i % 2 == 0) {
+                    animation: swipeOutColorBarL2R .7s ease-in-out #{$delay2}s 1 forwards, fadeOut 0.4s ease-in-out #{$delay2}s 1 forwards;
+                    $top: 50 + ($barHeight * math.div($i, $divFactor));
+                    left: -50vw;
+                } @else {
+                    animation: swipeOutColorBarR2L .7s ease-in-out #{$delay2}s 1 forwards, fadeOut 0.4s ease-in-out #{$delay2}s 1 forwards;
+                    $top: 50 + ($barHeight * (math.div($i - 1, $divFactor)));
+                    right: -50vw;
+                }
+                
+                top: #{$top}vh;
+                $colorRandom: math.random(3);
+                
+                @if ($colorRandom % 4 == 0) { background-color: var(--colorOne); }
+                @if ($colorRandom % 4 == 1) { background-color: var(--colorTwo); }
+                @if ($colorRandom % 4 == 2) { background-color: var(--colorThree); }
+                @if ($colorRandom % 4 == 3) { background-color: var(--colorFour); }
+            }
+            
+            &:nth-of-type(#{($i * 2) + 1}) {
+                
+                $top: 0;
+
+                @if ($i % 2 == 0) {
+                    animation: swipeOutColorBarL2R .7s ease-in-out #{$delay2}s 1 forwards, fadeOut 0.4s ease-in-out #{$delay2}s 1 forwards;
+                    $top: 50 - ($barHeight * math.div($i, $divFactor));
+                    left: -50vw;
+                } @else {
+                    animation: swipeOutColorBarR2L .7s ease-in-out #{$delay2}s 1 forwards, fadeOut 0.4s ease-in-out #{$delay2}s 1 forwards;
+                    $top: 50 - ($barHeight * math.div($i - 1, $divFactor));
+                    right: -50vw;
+                }
+                
+                top: #{$top}vh;
+                $colorRandom: math.random(3);
+
+                @if ($colorRandom % 4 == 0) { background-color: var(--colorOne); }
+                @if ($colorRandom % 4 == 1) { background-color: var(--colorTwo); }
+                @if ($colorRandom % 4 == 2) { background-color: var(--colorThree); }
+                @if ($colorRandom % 4 == 3) { background-color: var(--colorFour); }
+            }
+        
+        }
+    }
+
+}
+
+@keyframes swipeInColorBarL2R {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes swipeInColorBarR2L {
+    0% { transform: translateX(120%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes swipeOutColorBarL2R {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-120%); }
+}
+
+@keyframes swipeOutColorBarR2L {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(120%); }
+}
+
+@keyframes fadeOutDisplay {
+    0% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
