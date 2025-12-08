@@ -32,7 +32,7 @@
 
         <div class="intro__statement">
             <p>
-                I am a full stack web developer creating user focussed, complex software solutions. I primarily work with an Angular frontend, NodeJS backend and MySQL database. I love building web sites and the more challenging, the better!
+                I am a full stack web developer creating user focussed, complex software solutions. I primarily work with an Angular, NodeJS with a MySQL database. I love building web sites and the more challenging, the better!
             </p>
         </div>
 
