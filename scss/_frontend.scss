@@ -32,9 +32,17 @@
         align-items: center;
         justify-content: space-between;
 
+        @media screen and (max-width: $triggerOne) {
+            border: none;
+            box-shadow: none;
+        }
+
         @media screen and (max-width: $mobile) {
             flex-direction: column;
             row-gap: 1rem;
+            height: max-content;
+            border: none;
+            box-shadow: none;
         }
         
         transform: translateX(100%); 
@@ -44,9 +52,9 @@
             color: black;
             font-weight: bold;
 
-            @media screen and (max-width: $mobile) {
-                border-bottom: .3rem solid var(--colorOne);
-            }
+            // @media screen and (max-width: $mobile) {
+            //     border-bottom: .3rem solid var(--colorOne);
+            // }
         }
 
         &--logo {
@@ -58,8 +66,13 @@
             }
             
             @media screen and (max-width: $mobile) {
+                margin-bottom: 2rem;
+
                 &--long {
-                    max-height: 2.5rem;
+                    max-height: 4.5rem;
+                }
+                &--short {
+                    max-height: 7.5rem;
                 }
             }
         }
@@ -75,7 +88,8 @@
             &--short { max-height: 4rem; }
 
             @media screen and (max-width: $mobile) {
-                justify-content: center;
+                width: 100%;
+                justify-content: space-around;
                 column-gap: 1rem;
                 row-gap: 1rem;
                 // flex-wrap: wrap;
@@ -156,6 +170,19 @@
             background: var(--colorTwo);
             background-image: linear-gradient(rgba(211, 211, 211, .5), rgba(211, 211, 211, .5));  
         }
+
+        @media screen and (max-width: $triggerOne) {
+            border: none;
+            width: 100%;
+            box-shadow: none;
+            background-color: none;
+            background-image: linear-gradient(to top, transparent 0%, lightgray 20%, lightgray 80%, transparent 100%);
+        }
+        
+        @media screen and (max-width: $mobile) {
+            background-color: rgba(lightgrey, .5);
+        }
+
     }
     
     &__timer {
@@ -251,6 +278,8 @@
 
             border-radius: 0 1rem 1rem 0;
             padding: 2rem;
+
+            height: 100%;
 
             a {
                 img {

@@ -36,7 +36,7 @@ body.goth-mode .goth-mode {
 }
 
 .jazzyText {
-  font-family: "Jaro", sans-serif;
+  font-family: "Jaro", Impact, sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -232,6 +232,13 @@ body.goth-mode .goth-mode {
       -ms-transform: translateX(100%);
           transform: translateX(100%);
 }
+@media screen and (max-width: 70rem) {
+  .frontend__header {
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
 @media screen and (max-width: 45rem) {
   .frontend__header {
     -webkit-box-orient: vertical;
@@ -239,17 +246,18 @@ body.goth-mode .goth-mode {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 1rem;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 .frontend__header--text {
   font-size: 3rem;
   color: black;
   font-weight: bold;
-}
-@media screen and (max-width: 45rem) {
-  .frontend__header--text {
-    border-bottom: 0.3rem solid var(--colorOne);
-  }
 }
 .frontend__header--logo--long {
   max-height: 3rem;
@@ -258,8 +266,14 @@ body.goth-mode .goth-mode {
   max-height: 5rem;
 }
 @media screen and (max-width: 45rem) {
+  .frontend__header--logo {
+    margin-bottom: 2rem;
+  }
   .frontend__header--logo--long {
-    max-height: 2.5rem;
+    max-height: 4.5rem;
+  }
+  .frontend__header--logo--short {
+    max-height: 7.5rem;
   }
 }
 .frontend__header--tech {
@@ -284,9 +298,9 @@ body.goth-mode .goth-mode {
 }
 @media screen and (max-width: 45rem) {
   .frontend__header--tech {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-column-gap: 1rem;
        -moz-column-gap: 1rem;
             column-gap: 1rem;
@@ -371,6 +385,22 @@ body.goth-mode .goth-mode {
     background: var(--colorTwo);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(211, 211, 211, 0.5)), to(rgba(211, 211, 211, 0.5)));
     background-image: linear-gradient(rgba(211, 211, 211, 0.5), rgba(211, 211, 211, 0.5));
+  }
+}
+@media screen and (max-width: 70rem) {
+  .frontend__nav {
+    border: none;
+    width: 100%;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: none;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(20%, lightgray), color-stop(80%, lightgray), to(transparent));
+    background-image: linear-gradient(to top, transparent 0%, lightgray 20%, lightgray 80%, transparent 100%);
+  }
+}
+@media screen and (max-width: 45rem) {
+  .frontend__nav {
+    background-color: rgba(211, 211, 211, 0.5);
   }
 }
 .frontend__timer {
@@ -487,6 +517,7 @@ body.goth-mode .goth-mode {
   background-color: rgba(211, 211, 211, 0.5);
   border-radius: 0 1rem 1rem 0;
   padding: 2rem;
+  height: 100%;
 }
 .frontend__desc--links a img {
   width: 4rem;
@@ -1458,8 +1489,9 @@ body.goth-mode .goth-mode {
      -moz-column-gap: 1rem;
           column-gap: 1rem;
   text-align: center;
-  -webkit-animation: fadeOut 0.4s ease-in-out 1s 1 forwards;
-          animation: fadeOut 0.4s ease-in-out 1s 1 forwards;
+  opacity: 0;
+  -webkit-animation: fadeIn 0.1s ease-in-out 0.01s 1 forwards, fadeOut 0.4s ease-in-out 2s 1 forwards;
+          animation: fadeIn 0.1s ease-in-out 0.01s 1 forwards, fadeOut 0.4s ease-in-out 2s 1 forwards;
   text-shadow: 0.4rem 0.4rem 0 black;
   pointer-events: none;
 }
@@ -1498,42 +1530,42 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1s 1 forwards, fadeOut 0.4s ease-in-out 1s 1 forwards;
   left: -50vw;
   top: 50vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(2) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.03s 1 forwards, fadeOut 0.4s ease-in-out 1.03s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.03s 1 forwards, fadeOut 0.4s ease-in-out 1.03s 1 forwards;
   right: -50vw;
   top: 50vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(3) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.03s 1 forwards, fadeOut 0.4s ease-in-out 1.03s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.03s 1 forwards, fadeOut 0.4s ease-in-out 1.03s 1 forwards;
   right: -50vw;
   top: 50vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(4) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.06s 1 forwards, fadeOut 0.4s ease-in-out 1.06s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.06s 1 forwards, fadeOut 0.4s ease-in-out 1.06s 1 forwards;
   left: -50vw;
   top: 53.9024390244vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(5) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.06s 1 forwards, fadeOut 0.4s ease-in-out 1.06s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.06s 1 forwards, fadeOut 0.4s ease-in-out 1.06s 1 forwards;
   left: -50vw;
   top: 46.0975609756vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(6) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.09s 1 forwards, fadeOut 0.4s ease-in-out 1.09s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.09s 1 forwards, fadeOut 0.4s ease-in-out 1.09s 1 forwards;
   right: -50vw;
   top: 53.9024390244vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(7) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.09s 1 forwards, fadeOut 0.4s ease-in-out 1.09s 1 forwards;
@@ -1568,63 +1600,63 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.15s 1 forwards, fadeOut 0.4s ease-in-out 1.15s 1 forwards;
   right: -50vw;
   top: 42.1951219512vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(12) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.18s 1 forwards, fadeOut 0.4s ease-in-out 1.18s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.18s 1 forwards, fadeOut 0.4s ease-in-out 1.18s 1 forwards;
   left: -50vw;
   top: 61.7073170732vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(13) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.18s 1 forwards, fadeOut 0.4s ease-in-out 1.18s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.18s 1 forwards, fadeOut 0.4s ease-in-out 1.18s 1 forwards;
   left: -50vw;
   top: 38.2926829268vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(14) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.21s 1 forwards, fadeOut 0.4s ease-in-out 1.21s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.21s 1 forwards, fadeOut 0.4s ease-in-out 1.21s 1 forwards;
   right: -50vw;
   top: 61.7073170732vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(15) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.21s 1 forwards, fadeOut 0.4s ease-in-out 1.21s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.21s 1 forwards, fadeOut 0.4s ease-in-out 1.21s 1 forwards;
   right: -50vw;
   top: 38.2926829268vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(16) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.24s 1 forwards, fadeOut 0.4s ease-in-out 1.24s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.24s 1 forwards, fadeOut 0.4s ease-in-out 1.24s 1 forwards;
   left: -50vw;
   top: 65.6097560976vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(17) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.24s 1 forwards, fadeOut 0.4s ease-in-out 1.24s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.24s 1 forwards, fadeOut 0.4s ease-in-out 1.24s 1 forwards;
   left: -50vw;
   top: 34.3902439024vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(18) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.27s 1 forwards, fadeOut 0.4s ease-in-out 1.27s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.27s 1 forwards, fadeOut 0.4s ease-in-out 1.27s 1 forwards;
   right: -50vw;
   top: 65.6097560976vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(19) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.27s 1 forwards, fadeOut 0.4s ease-in-out 1.27s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.27s 1 forwards, fadeOut 0.4s ease-in-out 1.27s 1 forwards;
   right: -50vw;
   top: 34.3902439024vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(20) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.3s 1 forwards, fadeOut 0.4s ease-in-out 1.3s 1 forwards;
@@ -1645,21 +1677,21 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.33s 1 forwards, fadeOut 0.4s ease-in-out 1.33s 1 forwards;
   right: -50vw;
   top: 69.512195122vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(23) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.33s 1 forwards, fadeOut 0.4s ease-in-out 1.33s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.33s 1 forwards, fadeOut 0.4s ease-in-out 1.33s 1 forwards;
   right: -50vw;
   top: 30.487804878vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(24) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.36s 1 forwards, fadeOut 0.4s ease-in-out 1.36s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.36s 1 forwards, fadeOut 0.4s ease-in-out 1.36s 1 forwards;
   left: -50vw;
   top: 73.4146341463vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(25) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.36s 1 forwards, fadeOut 0.4s ease-in-out 1.36s 1 forwards;
@@ -1673,28 +1705,28 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.39s 1 forwards, fadeOut 0.4s ease-in-out 1.39s 1 forwards;
   right: -50vw;
   top: 73.4146341463vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(27) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.39s 1 forwards, fadeOut 0.4s ease-in-out 1.39s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.39s 1 forwards, fadeOut 0.4s ease-in-out 1.39s 1 forwards;
   right: -50vw;
   top: 26.5853658537vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(28) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.42s 1 forwards, fadeOut 0.4s ease-in-out 1.42s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.42s 1 forwards, fadeOut 0.4s ease-in-out 1.42s 1 forwards;
   left: -50vw;
   top: 77.3170731707vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(29) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.42s 1 forwards, fadeOut 0.4s ease-in-out 1.42s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.42s 1 forwards, fadeOut 0.4s ease-in-out 1.42s 1 forwards;
   left: -50vw;
   top: 22.6829268293vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(30) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.45s 1 forwards, fadeOut 0.4s ease-in-out 1.45s 1 forwards;
@@ -1722,21 +1754,21 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.48s 1 forwards, fadeOut 0.4s ease-in-out 1.48s 1 forwards;
   left: -50vw;
   top: 18.7804878049vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(34) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.51s 1 forwards, fadeOut 0.4s ease-in-out 1.51s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.51s 1 forwards, fadeOut 0.4s ease-in-out 1.51s 1 forwards;
   right: -50vw;
   top: 81.2195121951vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(35) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.51s 1 forwards, fadeOut 0.4s ease-in-out 1.51s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.51s 1 forwards, fadeOut 0.4s ease-in-out 1.51s 1 forwards;
   right: -50vw;
   top: 18.7804878049vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(36) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.54s 1 forwards, fadeOut 0.4s ease-in-out 1.54s 1 forwards;
@@ -1750,7 +1782,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.54s 1 forwards, fadeOut 0.4s ease-in-out 1.54s 1 forwards;
   left: -50vw;
   top: 14.8780487805vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(38) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.57s 1 forwards, fadeOut 0.4s ease-in-out 1.57s 1 forwards;
@@ -1764,35 +1796,35 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.57s 1 forwards, fadeOut 0.4s ease-in-out 1.57s 1 forwards;
   right: -50vw;
   top: 14.8780487805vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(40) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.6s 1 forwards, fadeOut 0.4s ease-in-out 1.6s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.6s 1 forwards, fadeOut 0.4s ease-in-out 1.6s 1 forwards;
   left: -50vw;
   top: 89.0243902439vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(41) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.6s 1 forwards, fadeOut 0.4s ease-in-out 1.6s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.6s 1 forwards, fadeOut 0.4s ease-in-out 1.6s 1 forwards;
   left: -50vw;
   top: 10.9756097561vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(42) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.63s 1 forwards, fadeOut 0.4s ease-in-out 1.63s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.63s 1 forwards, fadeOut 0.4s ease-in-out 1.63s 1 forwards;
   right: -50vw;
   top: 89.0243902439vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(43) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.63s 1 forwards, fadeOut 0.4s ease-in-out 1.63s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.63s 1 forwards, fadeOut 0.4s ease-in-out 1.63s 1 forwards;
   right: -50vw;
   top: 10.9756097561vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(44) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.66s 1 forwards, fadeOut 0.4s ease-in-out 1.66s 1 forwards;
@@ -1813,21 +1845,21 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.69s 1 forwards, fadeOut 0.4s ease-in-out 1.69s 1 forwards;
   right: -50vw;
   top: 92.9268292683vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(47) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.69s 1 forwards, fadeOut 0.4s ease-in-out 1.69s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.69s 1 forwards, fadeOut 0.4s ease-in-out 1.69s 1 forwards;
   right: -50vw;
   top: 7.0731707317vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(48) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.72s 1 forwards, fadeOut 0.4s ease-in-out 1.72s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.72s 1 forwards, fadeOut 0.4s ease-in-out 1.72s 1 forwards;
   left: -50vw;
   top: 96.8292682927vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(49) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.72s 1 forwards, fadeOut 0.4s ease-in-out 1.72s 1 forwards;
@@ -1841,7 +1873,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.75s 1 forwards, fadeOut 0.4s ease-in-out 1.75s 1 forwards;
   right: -50vw;
   top: 96.8292682927vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(51) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.75s 1 forwards, fadeOut 0.4s ease-in-out 1.75s 1 forwards;
@@ -1862,7 +1894,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.78s 1 forwards, fadeOut 0.4s ease-in-out 1.78s 1 forwards;
   left: -50vw;
   top: -0.7317073171vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(54) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.81s 1 forwards, fadeOut 0.4s ease-in-out 1.81s 1 forwards;
@@ -1876,77 +1908,77 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.81s 1 forwards, fadeOut 0.4s ease-in-out 1.81s 1 forwards;
   right: -50vw;
   top: -0.7317073171vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(56) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.84s 1 forwards, fadeOut 0.4s ease-in-out 1.84s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.84s 1 forwards, fadeOut 0.4s ease-in-out 1.84s 1 forwards;
   left: -50vw;
   top: 104.6341463415vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(57) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.84s 1 forwards, fadeOut 0.4s ease-in-out 1.84s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.84s 1 forwards, fadeOut 0.4s ease-in-out 1.84s 1 forwards;
   left: -50vw;
   top: -4.6341463415vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(58) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.87s 1 forwards, fadeOut 0.4s ease-in-out 1.87s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.87s 1 forwards, fadeOut 0.4s ease-in-out 1.87s 1 forwards;
   right: -50vw;
   top: 104.6341463415vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(59) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.87s 1 forwards, fadeOut 0.4s ease-in-out 1.87s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.87s 1 forwards, fadeOut 0.4s ease-in-out 1.87s 1 forwards;
   right: -50vw;
   top: -4.6341463415vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(60) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.9s 1 forwards, fadeOut 0.4s ease-in-out 1.9s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.9s 1 forwards, fadeOut 0.4s ease-in-out 1.9s 1 forwards;
   left: -50vw;
   top: 108.5365853659vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(61) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.9s 1 forwards, fadeOut 0.4s ease-in-out 1.9s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.9s 1 forwards, fadeOut 0.4s ease-in-out 1.9s 1 forwards;
   left: -50vw;
   top: -8.5365853659vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(62) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.93s 1 forwards, fadeOut 0.4s ease-in-out 1.93s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.93s 1 forwards, fadeOut 0.4s ease-in-out 1.93s 1 forwards;
   right: -50vw;
   top: 108.5365853659vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(63) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.93s 1 forwards, fadeOut 0.4s ease-in-out 1.93s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.93s 1 forwards, fadeOut 0.4s ease-in-out 1.93s 1 forwards;
   right: -50vw;
   top: -8.5365853659vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(64) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.96s 1 forwards, fadeOut 0.4s ease-in-out 1.96s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.96s 1 forwards, fadeOut 0.4s ease-in-out 1.96s 1 forwards;
   left: -50vw;
   top: 112.4390243902vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(65) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 1.96s 1 forwards, fadeOut 0.4s ease-in-out 1.96s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 1.96s 1 forwards, fadeOut 0.4s ease-in-out 1.96s 1 forwards;
   left: -50vw;
   top: -12.4390243902vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(66) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 1.99s 1 forwards, fadeOut 0.4s ease-in-out 1.99s 1 forwards;
@@ -1960,14 +1992,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 1.99s 1 forwards, fadeOut 0.4s ease-in-out 1.99s 1 forwards;
   right: -50vw;
   top: -12.4390243902vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(68) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.02s 1 forwards, fadeOut 0.4s ease-in-out 2.02s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.02s 1 forwards, fadeOut 0.4s ease-in-out 2.02s 1 forwards;
   left: -50vw;
   top: 116.3414634146vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(69) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.02s 1 forwards, fadeOut 0.4s ease-in-out 2.02s 1 forwards;
@@ -1981,14 +2013,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.05s 1 forwards, fadeOut 0.4s ease-in-out 2.05s 1 forwards;
   right: -50vw;
   top: 116.3414634146vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(71) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.05s 1 forwards, fadeOut 0.4s ease-in-out 2.05s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.05s 1 forwards, fadeOut 0.4s ease-in-out 2.05s 1 forwards;
   right: -50vw;
   top: -16.3414634146vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(72) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.08s 1 forwards, fadeOut 0.4s ease-in-out 2.08s 1 forwards;
@@ -2002,21 +2034,21 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.08s 1 forwards, fadeOut 0.4s ease-in-out 2.08s 1 forwards;
   left: -50vw;
   top: -20.243902439vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(74) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.11s 1 forwards, fadeOut 0.4s ease-in-out 2.11s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.11s 1 forwards, fadeOut 0.4s ease-in-out 2.11s 1 forwards;
   right: -50vw;
   top: 120.243902439vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(75) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.11s 1 forwards, fadeOut 0.4s ease-in-out 2.11s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.11s 1 forwards, fadeOut 0.4s ease-in-out 2.11s 1 forwards;
   right: -50vw;
   top: -20.243902439vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(76) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.14s 1 forwards, fadeOut 0.4s ease-in-out 2.14s 1 forwards;
@@ -2030,7 +2062,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.14s 1 forwards, fadeOut 0.4s ease-in-out 2.14s 1 forwards;
   left: -50vw;
   top: -24.1463414634vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(78) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.17s 1 forwards, fadeOut 0.4s ease-in-out 2.17s 1 forwards;
@@ -2044,14 +2076,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.17s 1 forwards, fadeOut 0.4s ease-in-out 2.17s 1 forwards;
   right: -50vw;
   top: -24.1463414634vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(80) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.2s 1 forwards, fadeOut 0.4s ease-in-out 2.2s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.2s 1 forwards, fadeOut 0.4s ease-in-out 2.2s 1 forwards;
   left: -50vw;
   top: 128.0487804878vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(81) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.2s 1 forwards, fadeOut 0.4s ease-in-out 2.2s 1 forwards;
@@ -2079,7 +2111,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.26s 1 forwards, fadeOut 0.4s ease-in-out 2.26s 1 forwards;
   left: -50vw;
   top: 131.9512195122vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(85) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.26s 1 forwards, fadeOut 0.4s ease-in-out 2.26s 1 forwards;
@@ -2093,77 +2125,77 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.29s 1 forwards, fadeOut 0.4s ease-in-out 2.29s 1 forwards;
   right: -50vw;
   top: 131.9512195122vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(87) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.29s 1 forwards, fadeOut 0.4s ease-in-out 2.29s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.29s 1 forwards, fadeOut 0.4s ease-in-out 2.29s 1 forwards;
   right: -50vw;
   top: -31.9512195122vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(88) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.32s 1 forwards, fadeOut 0.4s ease-in-out 2.32s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.32s 1 forwards, fadeOut 0.4s ease-in-out 2.32s 1 forwards;
   left: -50vw;
   top: 135.8536585366vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(89) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.32s 1 forwards, fadeOut 0.4s ease-in-out 2.32s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.32s 1 forwards, fadeOut 0.4s ease-in-out 2.32s 1 forwards;
   left: -50vw;
   top: -35.8536585366vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(90) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.35s 1 forwards, fadeOut 0.4s ease-in-out 2.35s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.35s 1 forwards, fadeOut 0.4s ease-in-out 2.35s 1 forwards;
   right: -50vw;
   top: 135.8536585366vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(91) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.35s 1 forwards, fadeOut 0.4s ease-in-out 2.35s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.35s 1 forwards, fadeOut 0.4s ease-in-out 2.35s 1 forwards;
   right: -50vw;
   top: -35.8536585366vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(92) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.38s 1 forwards, fadeOut 0.4s ease-in-out 2.38s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.38s 1 forwards, fadeOut 0.4s ease-in-out 2.38s 1 forwards;
   left: -50vw;
   top: 139.756097561vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(93) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.38s 1 forwards, fadeOut 0.4s ease-in-out 2.38s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.38s 1 forwards, fadeOut 0.4s ease-in-out 2.38s 1 forwards;
   left: -50vw;
   top: -39.756097561vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(94) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.41s 1 forwards, fadeOut 0.4s ease-in-out 2.41s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.41s 1 forwards, fadeOut 0.4s ease-in-out 2.41s 1 forwards;
   right: -50vw;
   top: 139.756097561vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(95) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.41s 1 forwards, fadeOut 0.4s ease-in-out 2.41s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.41s 1 forwards, fadeOut 0.4s ease-in-out 2.41s 1 forwards;
   right: -50vw;
   top: -39.756097561vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(96) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.44s 1 forwards, fadeOut 0.4s ease-in-out 2.44s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.44s 1 forwards, fadeOut 0.4s ease-in-out 2.44s 1 forwards;
   left: -50vw;
   top: 143.6585365854vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(97) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.44s 1 forwards, fadeOut 0.4s ease-in-out 2.44s 1 forwards;
@@ -2177,7 +2209,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.47s 1 forwards, fadeOut 0.4s ease-in-out 2.47s 1 forwards;
   right: -50vw;
   top: 143.6585365854vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(99) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.47s 1 forwards, fadeOut 0.4s ease-in-out 2.47s 1 forwards;
@@ -2191,7 +2223,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.5s 1 forwards, fadeOut 0.4s ease-in-out 2.5s 1 forwards;
   left: -50vw;
   top: 147.5609756098vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(101) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.5s 1 forwards, fadeOut 0.4s ease-in-out 2.5s 1 forwards;
@@ -2212,14 +2244,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.53s 1 forwards, fadeOut 0.4s ease-in-out 2.53s 1 forwards;
   right: -50vw;
   top: -47.5609756098vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(104) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.56s 1 forwards, fadeOut 0.4s ease-in-out 2.56s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.56s 1 forwards, fadeOut 0.4s ease-in-out 2.56s 1 forwards;
   left: -50vw;
   top: 151.4634146341vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(105) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.56s 1 forwards, fadeOut 0.4s ease-in-out 2.56s 1 forwards;
@@ -2240,14 +2272,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.59s 1 forwards, fadeOut 0.4s ease-in-out 2.59s 1 forwards;
   right: -50vw;
   top: -51.4634146341vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(108) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.62s 1 forwards, fadeOut 0.4s ease-in-out 2.62s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.62s 1 forwards, fadeOut 0.4s ease-in-out 2.62s 1 forwards;
   left: -50vw;
   top: 155.3658536585vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(109) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.62s 1 forwards, fadeOut 0.4s ease-in-out 2.62s 1 forwards;
@@ -2268,14 +2300,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.65s 1 forwards, fadeOut 0.4s ease-in-out 2.65s 1 forwards;
   right: -50vw;
   top: -55.3658536585vh;
-  background-color: var(--colorTwo);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(112) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.68s 1 forwards, fadeOut 0.4s ease-in-out 2.68s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.68s 1 forwards, fadeOut 0.4s ease-in-out 2.68s 1 forwards;
   left: -50vw;
   top: 159.2682926829vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(113) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.68s 1 forwards, fadeOut 0.4s ease-in-out 2.68s 1 forwards;
@@ -2289,21 +2321,21 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.71s 1 forwards, fadeOut 0.4s ease-in-out 2.71s 1 forwards;
   right: -50vw;
   top: 159.2682926829vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(115) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.71s 1 forwards, fadeOut 0.4s ease-in-out 2.71s 1 forwards;
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.71s 1 forwards, fadeOut 0.4s ease-in-out 2.71s 1 forwards;
   right: -50vw;
   top: -59.2682926829vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(116) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.74s 1 forwards, fadeOut 0.4s ease-in-out 2.74s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.74s 1 forwards, fadeOut 0.4s ease-in-out 2.74s 1 forwards;
   left: -50vw;
   top: 163.1707317073vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(117) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.74s 1 forwards, fadeOut 0.4s ease-in-out 2.74s 1 forwards;
@@ -2324,14 +2356,14 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.77s 1 forwards, fadeOut 0.4s ease-in-out 2.77s 1 forwards;
   right: -50vw;
   top: -63.1707317073vh;
-  background-color: var(--colorThree);
+  background-color: var(--colorFour);
 }
 .colorSwipe__bar:nth-of-type(120) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.8s 1 forwards, fadeOut 0.4s ease-in-out 2.8s 1 forwards;
           animation: swipeOutColorBarL2R 0.7s ease-in-out 2.8s 1 forwards, fadeOut 0.4s ease-in-out 2.8s 1 forwards;
   left: -50vw;
   top: 167.0731707317vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorTwo);
 }
 .colorSwipe__bar:nth-of-type(121) {
   -webkit-animation: swipeOutColorBarL2R 0.7s ease-in-out 2.8s 1 forwards, fadeOut 0.4s ease-in-out 2.8s 1 forwards;
@@ -2373,7 +2405,7 @@ body.goth-mode .goth-mode {
           animation: swipeOutColorBarR2L 0.7s ease-in-out 2.89s 1 forwards, fadeOut 0.4s ease-in-out 2.89s 1 forwards;
   right: -50vw;
   top: 170.9756097561vh;
-  background-color: var(--colorFour);
+  background-color: var(--colorThree);
 }
 .colorSwipe__bar:nth-of-type(127) {
   -webkit-animation: swipeOutColorBarR2L 0.7s ease-in-out 2.89s 1 forwards, fadeOut 0.4s ease-in-out 2.89s 1 forwards;

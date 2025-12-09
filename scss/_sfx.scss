@@ -32,7 +32,8 @@
         justify-content: center;
         column-gap: 1rem;
         text-align: center;
-        animation: fadeOut 0.4s ease-in-out 1s 1 forwards;
+        opacity: 0;
+        animation: fadeIn 0.1s ease-in-out 0.01s 1 forwards, fadeOut 0.4s ease-in-out 2.0s 1 forwards;
         
         text-shadow: .4rem .4rem 0 black;
 
