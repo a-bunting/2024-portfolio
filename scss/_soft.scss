@@ -56,7 +56,8 @@
         border-radius: 2rem;
         border: .3rem solid var(--colorOne);
         box-shadow: .3rem .3rem 0 var(--colorFour);
-        overflow: scroll;
+        overflow-y: auto;
+        overflow-x: none;
         background-color: var(--colorOne);
         
         transition: all .2s;

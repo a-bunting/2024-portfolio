@@ -57,6 +57,7 @@
                     <img class="intro__techlist--short" src="./images/logo/HTML_Logo2.svg" alt="HTML5">
                     <img class="intro__techlist--long" src="./images/logo/jQuery-Logo.png" alt="jQuery">
                     <img class="intro__techlist--long" src="./images/logo/mongodb.svg" alt="MongoDB">
+                    <img class="intro__techlist--long" src="./images/logo/firebaselogo.png" alt="Firebase">
                 </div>
                 <!-- <div class="intro__techlist--row">
                 </div> -->

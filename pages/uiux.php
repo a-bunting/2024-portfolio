@@ -67,12 +67,12 @@ $galleries =
         ),
         array(
             "galleryName" => "StellarNova",
-            "description" => "StellarNova is an in progress space trader game based on the early naughties hit, 'Blacknova Traders'. Players navigate the galaxy in their ship; trading, earning money and building an empire. This game utilises a complex UI using Three.JS to present the space ship and websockets to update the user interface based upon other players actions.",
+            "description" => "StellarNova is a (slowly) in progress space trader game based on the early naughties hit, 'Blacknova Traders'. Players navigate the galaxy in their ship; trading, earning money and building an empire. This game utilises a complex UI using Three.JS to present the space ship and websockets to update the user interface based upon other players actions.",
             "logo" => array("filename" => "stellarnovalogo.png", "hasLogo" => true, "long" => true),
             "style" => "laptop",
             "links" => array(
                 array("name" => "GitHub", "icon" => "Git-Icon-1788C.png", "link" => "https://github.com/a-bunting/StellarNova"),
-                array("name" => "Live Site", "icon" => "liveicon.png", "link" => "https://rednova.sweeto.co.uk/")
+                array("name" => "Live Site", "icon" => "liveicon.png", "link" => "https://www.stellarnova.online/")
             ),
             "tech" => [
                 array("long" => false, "name" => "Angular", "filename" => "Angular_trimmed.svg"),
@@ -168,7 +168,7 @@ $galleries =
             "logo" => array("filename" => "arc.png", "hasLogo" => true, "long" => false),
             "style" => "laptop",
             "links" => array(
-                array("name" => "Live Site", "icon" => "liveicon.png", "link" => "https://www.sweeto.co.uk/arc/"),
+                array("name" => "Live Site", "icon" => "liveicon.png", "link" => "https://arc.sweeto.co.uk/"),
                 array("name" => "GitHub", "icon" => "Git-Icon-1788C.png", "link" => "https://github.com/a-bunting/arc")
             ),
             "tech" => [
@@ -192,9 +192,9 @@ $projectIndex = $_GET['project'];
 
     <div class="frontend__nav">
 
-        <div class="frontend__projectsTitle deleteOnClick" data-ident="projectButton">
+        <!-- <div class="frontend__projectsTitle deleteOnClick" data-ident="projectButton">
             Click the buttons below to see my projects
-        </div>
+        </div> -->
 
         <div class="frontend__links">
             <?php
